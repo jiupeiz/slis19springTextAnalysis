@@ -5,7 +5,7 @@
 import csv
 
 def get_PosP(filename):
-    docu = list()
+    words = list()
     with open(filename) as f:
         lines = f.readlines()
         for line in lines:
@@ -14,13 +14,14 @@ def get_PosP(filename):
             word, info = line.rstrip().split("\t")
             info_list = info.split(",")
             posp = [word, info_list[0]] 
-            docu.append(posp)
+            words.append(posp)
     f.close()
-    return docu
+    return words
 
 if __name__ == '__main__':
     data = get_PosP("morphs.txt")
     with open("posp.csv", "w") as w:
         writer = csv.writer(w)
+        writer.writerow(['形態素', '品詞'])
         writer.writerows(data)
     w.close()
