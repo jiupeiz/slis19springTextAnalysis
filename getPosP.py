@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-
+# -*- coding: utf-8 -*-
 # get pos-word pair
 
 import csv
@@ -22,6 +22,6 @@ if __name__ == '__main__':
     data = get_PosP("morphs.txt")
     with open("posp.csv", "w") as w:
         writer = csv.writer(w)
-        writer.writerow(['形態素', '品詞'])
+        # writer.writerow(['形態素', '品詞'])
         writer.writerows(data)
     w.close()

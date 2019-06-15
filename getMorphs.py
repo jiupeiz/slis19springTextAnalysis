@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-
+# -*- coding: utf-8 -*-
 import MeCab
 # read file and spilt to sentence to lines
 
